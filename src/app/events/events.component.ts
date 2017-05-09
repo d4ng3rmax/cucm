@@ -3,8 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { Event } from './event';
 import { EventDataService } from './event-data.service';
 
-import { HeaderComponent } from '../header/header.component';
-
 @Component({
 	selector: 'cucm-root',
 	templateUrl: './events.component.html',
@@ -13,7 +11,10 @@ import { HeaderComponent } from '../header/header.component';
 		EventDataService
 	]
 })
+
 export class EventsComponent implements OnInit {
+
+	private title = 'Events';
 
 	newEvent : Event = new Event();
 

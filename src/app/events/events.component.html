@@ -1,10 +1,11 @@
 <section class="eventapp">
     <cucm-header></cucm-header>
     <header class="header">
-        <h1>Calendário</h1>
+        <h1>{{title}}</h1>
         <input class="new-event" placeholder="What needs to be done???" autofocus="" [(ngModel)]="newEvent.title" (keyup.enter)="addEvent()">
     </header>
-
+    <cucm-menu></cucm-menu>
+    
     <section class="main" *ngIf="events.length > 0">
         <ul class="event-list">
             <li *ngFor="let event of events" [class.completed]="event.complete">
@@ -17,6 +18,7 @@
         </ul>
     </section>
 
+    <cucm-footer></cucm-footer>
     <footer class="footer" *ngIf="events.length > 0">
         <span class="event-count"><strong>{{events.length}}</strong> {{events.length == 1 ? 'item' : 'items'}} left</span>
     </footer>
